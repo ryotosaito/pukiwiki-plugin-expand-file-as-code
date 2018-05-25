@@ -23,6 +23,10 @@ function plugin_srcref_convert()
 	{
 		return 'File not found: "' . $name . '" at page "' . $page . '"';
 	}
-	$html = "<details><summary>Source : " . plugin_ref_inline(func_get_args()[0]) . "</summary><pre><code>" . htmlspecialchars(file_get_contents($file)) . "</code></pre></details>";
+	$html = "";
+	$html .= "<details>\n";
+	$html .= "  <summary>Source : " . plugin_ref_inline(func_get_args()[0]) . "</summary>\n";
+	$html .= "  <pre><code>" . htmlspecialchars(file_get_contents($file)) . "</code></pre>\n";
+	$html .= "</details>";
 	return $html;
 }
