@@ -10,5 +10,15 @@
 //
 function plugin_srcref_convert()
 {
-	return "";
+	global $vars;
+	if(!func_num_args())
+	{
+		return "";
+	}
+	$page = $vars['page'] ?: '';
+	$name = func_get_args()[0];
+	$file = UPLOAD_DIR . encode($page) . '_' . encode($name);
+	$html = plugin_ref_inline(func_get_args()[0]);
+	$html .= "<pre>".file_get_contents($file)."</pre>";
+	return $html;
 }
