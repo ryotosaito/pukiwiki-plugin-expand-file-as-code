@@ -13,12 +13,16 @@ function plugin_srcref_convert()
 	global $vars;
 	if(!func_num_args())
 	{
-		return "";
+		return "Argument not set.";
 	}
 	require_once "ref.inc.php";
 	$page = $vars['page'] ?: '';
 	$name = func_get_args()[0];
 	$file = UPLOAD_DIR . encode($page) . '_' . encode($name);
+	if (!file_exists($file))
+	{
+		return 'File not found: "' . $name . '" at page "' . $page . '"';
+	}
 	$html = "<details><summary>Source : ".plugin_ref_inline(func_get_args()[0])."</summary><pre>".file_get_contents($file)."</pre></details>";
 	return $html;
 }
