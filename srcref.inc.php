@@ -19,7 +19,6 @@ function plugin_srcref_convert()
 	$page = $vars['page'] ?: '';
 	$name = func_get_args()[0];
 	$file = UPLOAD_DIR . encode($page) . '_' . encode($name);
-	$html = plugin_ref_inline(func_get_args()[0]);
-	$html .= "<pre>".file_get_contents($file)."</pre>";
+	$html = "<details><summary>Source : ".plugin_ref_inline(func_get_args()[0])."</summary><pre>".file_get_contents($file)."</pre></details>";
 	return $html;
 }
