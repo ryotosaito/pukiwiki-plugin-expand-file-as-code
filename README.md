@@ -11,7 +11,7 @@ Source code file previewing plugin for [PukiWiki](https://pukiwiki.osdn.jp/).
 #srcref(main.c);
 ```
 
-![preview](https://user-images.githubusercontent.com/25919385/40523382-3d6f7128-6010-11e8-9111-877e069958bb.png)
+![preview](https://user-images.githubusercontent.com/25919385/40549685-1a48ca4c-6073-11e8-9c55-59ac7bda44d0.png)
 
 # Installation
 Copy [srcref.inc.php](https://raw.githubusercontent.com/ryotosaito/pukiwiki-plugin-expand-file-as-code/master/srcref.inc.php) to `plugin/` directory in PukiWiki root directory.
