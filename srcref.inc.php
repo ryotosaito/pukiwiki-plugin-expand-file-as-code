@@ -15,6 +15,7 @@ function plugin_srcref_convert()
 	{
 		return "";
 	}
+	require_once "ref.inc.php";
 	$page = $vars['page'] ?: '';
 	$name = func_get_args()[0];
 	$file = UPLOAD_DIR . encode($page) . '_' . encode($name);
