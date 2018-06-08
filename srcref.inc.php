@@ -25,7 +25,7 @@ function plugin_srcref_convert()
 	}
 	$html = "";
 	$html .= "<details>\n";
-	$html .= "  <summary>Source : " . plugin_ref_inline(func_get_args()[0]) . "</summary>\n";
+	$html .= "  <summary>" . (func_num_args()===1 ? "Source" : func_get_args()[1]) . " : " . plugin_ref_inline($name) . "</summary>\n";
 	$html .= "  <pre><code>" . htmlspecialchars(file_get_contents($file)) . "</code></pre>\n";
 	$html .= "</details>";
 	return $html;
